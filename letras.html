@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css" >
+    <meta charset="utf-8" />
+    <title>FONO-letras</title>
+    <script>
+        window.onload = function () {
+            var largura = 1400;
+            var altura = 900;
+
+            var quadro = document.getElementById("quadro");
+            quadro.setAttribute("width", largura);
+            quadro.setAttribute("height", altura);
+
+            var ctx = quadro.getContext("2d");
+
+            var desenhando = false;
+
+            quadro.onmousedown = function (evt) {
+                ctx.moveTo(evt.clientX, evt.clientY);
+                desenhando = true;
+            }
+
+            quadro.onmouseup = function () {
+                desenhando = false;                
+            }
+
+            quadro.onmousemove = function (evt) {
+                if (desenhando) {
+                    ctx.lineTo(evt.clientX, evt.clientY);
+                    ctx.stroke();
+                }
+            }
+        }
+        function letras(){
+		var c = document.getElementById("quadro");
+		var context = c.getContext("2d");
+		context.font = "bold 80px Impact, fantasy";
+		context.fillText("A", 1000, 789);
+		context.fillText("B", 967, 570);
+		context.fillText("C", 875, 349);
+		context.fillText("D", 679, 800);
+		context.fillText("E", 980, 702);
+		context.fillText("F", 1130, 579);
+		context.fillText("G", 206, 300);
+		context.fillText("H", 126, 530);
+		context.fillText("I", 940, 350);
+		context.fillText("J", 600, 400);
+		context.fillText("K", 749, 176);
+		context.fillText("L", 880, 450);
+		context.fillText("M", 438, 129);
+		context.fillText("N", 302, 100);
+		context.fillText("O", 650, 600);
+		context.fillText("P", 478, 616);
+		context.fillText("Q", 696, 470);
+		context.fillText("R", 760, 415);
+		context.fillText("S", 410, 400);
+		context.fillText("U", 333, 174);
+		context.fillText("V", 69, 367);
+		context.fillText("X", 274, 200);
+		context.fillText("W", 1200, 200);
+		context.fillText("Y", 380, 645);
+		context.fillText("Z", 670, 300);
+	}
+    </script>
+</head>
+<body>
+    
+    <canvas id="quadro" style="background-image: url('https://st3.depositphotos.com/1798678/19504/v/1600/depositphotos_195045254-stock-illustration-random-letters-english-alphabet-background.jpg')"></canvas><br>
+    <a href="index.html"><button type="button" class="btn btn-primary btn-lg btn-block" style="font-size:15px;">VOLTAR</button></a>
+
+</body>
+</html>
